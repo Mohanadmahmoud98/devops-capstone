@@ -1,10 +1,8 @@
-all: build
-
-build:
-	docker build -f ${Dockerfile}  -t $(NAME) .
-	docker tag $(NAME) $(NAME):$(VERSION)
-
-
+NAMEBLUE = mohanadmahmoud98/CapstoneBlue
+DockerfileBLUE=Dockerfileblue
+NAMEGREEN = mohanadmahmoud98/CapstoneGreen
+DockerfileGREEN=Dockerfilegreen
+VERSION = latest
 setup:
 	# Create python virtualenv & source it
 	# source ~/.devops/bin/activate
@@ -28,5 +26,12 @@ lint:
 	# This is a linter for Python source code linter: https://www.pylint.org/
 	# This should be run from inside a virtualenv
 	#pylint --disable=R,C,W1203 app.py
-
+buildpushblue: 
+	docker build -f ${DockerfileBLUE}  -t $(NAMEBLUE) .
+	docker tag $(NAMEBLUE) $(NAMEBLUE):$(VERSION)
+	docker push $(NAMEBLUE)
+buildpushgreen: 
+	docker build -f ${DockerfileGREEN}  -t $(NAMEGREEN) .
+	docker tag $(NAMEGREEN) $(NAMEGREEN):$(VERSION)
+	docker push $(NAMEGREEN)
 all: install lint test
