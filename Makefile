@@ -1,6 +1,6 @@
-NAMEBLUE = mohanadmahmoud98/CapstoneBlue
+NAMEBLUE = mohanadmahmoud98/capstoneblue
 DockerfileBLUE=Dockerfileblue
-NAMEGREEN = mohanadmahmoud98/CapstoneGreen
+NAMEGREEN = mohanadmahmoud98/capstonegreen
 DockerfileGREEN=Dockerfilegreen
 VERSION = latest
 setup:
