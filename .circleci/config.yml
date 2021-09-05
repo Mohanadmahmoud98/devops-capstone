@@ -64,11 +64,11 @@ jobs:
             #mv /tmp/eksctl /usr/local/bin
             sudo cp eksctl /usr/local/bin 
             echo "eksctl version"
-            eksctl version
+            sudo eksctl version
             wget -q https://storage.googleapis.com/kubernetes-release/release/$(wget -q -O - https://storage.googleapis.com/kubernetes-release/release/stable.txt -O -)/bin/linux/amd64/kubectl -O kubectl
-            chmod +x ./kubectl && mv ./kubectl /usr/local/bin/kubectl
+            sudo chmod +x ./kubectl && mv ./kubectl /usr/local/bin/kubectl
 
-            chmod +x /usr/local/bin/kubectl
+            sudo chmod +x /usr/local/bin/kubectl
             # mv kubectl /usr/local/bin
             ls -l /usr/local/bin/kubectl
             pwd
@@ -76,7 +76,7 @@ jobs:
       - run:
           name: Create Cluster
           command: |
-            eksctl create cluster -f ./eks-config.yml
+            sudo eksctl create cluster -f ./eks-config.yml
       - run:
           name: Deploy blue container
           command: |
