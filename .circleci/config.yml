@@ -76,7 +76,7 @@ jobs:
       - run:
           name: Create Cluster
           command: |
-            sudo eksctl create cluster -f ./eks-config.yml
+            eksctl create cluster -f ./eks-config.yml
       - run:
           name: Deploy blue container
           command: |
