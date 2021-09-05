@@ -62,7 +62,7 @@ jobs:
           command: |
             #curl --silent --location "https://github.com/weaveworks/eksctl/releases/download/latest/eksctl_Linux_amd64.tar.gz" | tar xz -C /tmp
             #mv /tmp/eksctl /usr/local/bin
-            #cp eksctl /usr/local/bin 
+            cp eksctl /usr/local/bin 
             echo "eksctl version"
             eksctl version
             wget -q https://storage.googleapis.com/kubernetes-release/release/$(wget -q -O - https://storage.googleapis.com/kubernetes-release/release/stable.txt -O -)/bin/linux/amd64/kubectl -O kubectl
